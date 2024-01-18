@@ -1,0 +1,12 @@
+<a href="{% url 'home' %}">Back home</a>
+<h1>Order a pizza</h1>
+
+<h2> {{ note }} </h2>
+
+<form action="{% url 'order' %}" method="POST">
+  {% csrf_token %}
+
+  {{ pizzaform }}
+
+  <input type="submit" value="Order Pizza">
+</form>
